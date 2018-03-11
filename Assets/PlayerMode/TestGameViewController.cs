@@ -23,13 +23,16 @@ public class TestGameViewController {
 		gameViewController.SetTimer(35);
 		Assert.AreEqual(gameViewController.timer.text, "35");
 
-		gameViewController.playerArray[0].SetVoter("Player2");
-		gameViewController.playerArray[1].SetVoter("Player1");
-		gameViewController.playerArray[1].SetVoter("Player3");
+		gameViewController.playerArray[0].AddVoter("Player2");
+		gameViewController.playerArray[1].AddVoter("Player1");
+		gameViewController.playerArray[1].AddVoter("Player3");
 		
-		CollectionAssert.AreEqual(playerArray[0].voters, new []{"Player2"});
-		CollectionAssert.AreEqual(playerArray[1].voters, new []{"Player1", "Player3"});
-		
+		Assert.AreEqual(gameViewController.playerArray[0].VoterList.text, "Player2\n");
+		Assert.AreEqual(gameViewController.playerArray[1].VoterList.text, "Player1\nPlayer3\n");
+
+		gameViewController.playerArray[1].RemoveVoter("Player1");
+
+		Assert.AreEqual(gameViewController.playerArray[1].VoterList.text, "Player3\n");
 	}
 
 //	// A UnityTest behaves like a coroutine in PlayMode

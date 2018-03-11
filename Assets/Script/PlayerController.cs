@@ -8,16 +8,23 @@ public class PlayerController : MonoBehaviour
 
 	public Text IdText;
 	public Text RoleText;
-	public Text[] voter;
+	public Text VoterList;
 
 	public void Set(PlayerModel playerModel)
 	{
 		IdText.text = "Player" + playerModel.playerId;
 		RoleText.text = playerModel.role;
+		VoterList.text = "";
 	}
 
-	public void SetVoter(string playerId)
+	public void AddVoter(string playerId)
 	{
-		throw new System.NotImplementedException();
+		VoterList.text += playerId + "\n";
+	}
+
+	public void RemoveVoter(string playerId)
+	{
+		string before = VoterList.text;
+		VoterList.text = before.Replace(playerId + "\n", "");
 	}
 }
