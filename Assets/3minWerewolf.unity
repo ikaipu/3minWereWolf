@@ -708,9 +708,49 @@ Prefab:
 
 '
       objectReference: {fileID: 0}
+    - target: {fileID: 1287260450035326, guid: 37e2e94054b7c471f90e860527561e91, type: 2}
+      propertyPath: m_Name
+      value: VoteTo
+      objectReference: {fileID: 0}
+    - target: {fileID: 114873434779723532, guid: 37e2e94054b7c471f90e860527561e91,
+        type: 2}
+      propertyPath: m_Text
+      value: '?'
+      objectReference: {fileID: 0}
+    - target: {fileID: 114981505343985922, guid: 37e2e94054b7c471f90e860527561e91,
+        type: 2}
+      propertyPath: m_Text
+      value: '?'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1376489759247722, guid: 37e2e94054b7c471f90e860527561e91, type: 2}
+      propertyPath: m_Name
+      value: VoteTo
+      objectReference: {fileID: 0}
+    - target: {fileID: 114936749565353240, guid: 37e2e94054b7c471f90e860527561e91,
+        type: 2}
+      propertyPath: VoteTo
+      value: 
+      objectReference: {fileID: 1513868815}
+    - target: {fileID: 114441742562628988, guid: 37e2e94054b7c471f90e860527561e91,
+        type: 2}
+      propertyPath: VoteTo
+      value: 
+      objectReference: {fileID: 1513868814}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 37e2e94054b7c471f90e860527561e91, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &1513868814 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114981505343985922, guid: 37e2e94054b7c471f90e860527561e91,
+    type: 2}
+  m_PrefabInternal: {fileID: 1513868813}
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+--- !u!114 &1513868815 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114873434779723532, guid: 37e2e94054b7c471f90e860527561e91,
+    type: 2}
+  m_PrefabInternal: {fileID: 1513868813}
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1001 &1669017827
 Prefab:
   m_ObjectHideFlags: 0

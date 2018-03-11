@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Script;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,23 +9,17 @@ public class PlayerController : MonoBehaviour
 
 	public Text IdText;
 	public Text RoleText;
-	public Text VoterList;
+	public Text VoteTo;
 
 	public void Set(PlayerModel playerModel)
 	{
-		IdText.text = "Player" + playerModel.playerId;
+		IdText.text = playerModel.player.ToString();
 		RoleText.text = playerModel.role.ToString();
-		VoterList.text = "";
+		VoteTo.text = "";
 	}
 
-	public void AddVoter(string playerId)
+	public void SetVoteTo(EnumPlayer player)
 	{
-		VoterList.text += playerId + "\n";
-	}
-
-	public void RemoveVoter(string playerId)
-	{
-		string before = VoterList.text;
-		VoterList.text = before.Replace(playerId + "\n", "");
+		VoteTo.text = player.ToString();
 	}
 }

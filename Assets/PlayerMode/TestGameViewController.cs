@@ -12,28 +12,23 @@ public class TestGameViewController {
 		GameObject gameViewPrefab = Resources.Load<GameObject>("GameView");
 		GameViewController gameViewController = GameObject.Instantiate(gameViewPrefab).GetComponent<GameViewController>();
 		PlayerModel[] PlayerModelArray = new PlayerModel[2];
-		PlayerModelArray[0] = new PlayerModel(1, EnumRole.Citizen);
-		PlayerModelArray[1] = new PlayerModel(2, EnumRole.Werewolf);
+		PlayerModelArray[0] = new PlayerModel(EnumPlayer.Player1, EnumRole.Citizen);
+		PlayerModelArray[1] = new PlayerModel(EnumPlayer.Player2, EnumRole.Werewolf);
 		gameViewController.SetPlayer(PlayerModelArray);
 		
-		Assert.AreEqual(gameViewController.playerArray[0].IdText.text,"Player1");
+		Assert.AreEqual(gameViewController.playerArray[0].IdText.text, EnumPlayer.Player1.ToString());
 		Assert.AreEqual(gameViewController.playerArray[0].RoleText.text,EnumRole.Citizen);
-		Assert.AreEqual(gameViewController.playerArray[1].IdText.text,"Player2");
+		Assert.AreEqual(gameViewController.playerArray[1].IdText.text,EnumPlayer.Player2.ToString());
 		Assert.AreEqual(gameViewController.playerArray[1].RoleText.text,EnumRole.Werewolf);
 
 		gameViewController.SetTimer(35);
 		Assert.AreEqual(gameViewController.timer.text, "35");
 
-		gameViewController.playerArray[0].AddVoter("Player2");
-		gameViewController.playerArray[1].AddVoter("Player1");
-		gameViewController.playerArray[1].AddVoter("Player3");
+		gameViewController.SetVote(EnumPlayer.Player1, EnumPlayer.Player2);
+		gameViewController.SetVote(EnumPlayer.Player2, EnumPlayer.Player1);
 		
-		Assert.AreEqual(gameViewController.playerArray[0].VoterList.text, "Player2\n");
-		Assert.AreEqual(gameViewController.playerArray[1].VoterList.text, "Player1\nPlayer3\n");
-
-		gameViewController.playerArray[1].RemoveVoter("Player1");
-
-		Assert.AreEqual(gameViewController.playerArray[1].VoterList.text, "Player3\n");
+		Assert.AreEqual(gameViewController.playerArray[0].IdText.text, EnumPlayer.Player2.ToString());
+		Assert.AreEqual(gameViewController.playerArray[1].IdText.text, EnumPlayer.Player1.ToString());
 	}
 
 //	// A UnityTest behaves like a coroutine in PlayMode

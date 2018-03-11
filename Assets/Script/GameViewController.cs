@@ -1,5 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
+using Script;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -20,5 +22,11 @@ public class GameViewController : MonoBehaviour
     public void SetTimer(int time)
     {
         timer.text = time.ToString();
+    }
+
+    public void SetVote(EnumPlayer from, EnumPlayer to)
+    {
+        var player = playerArray.First(p => p.IdText.text == from.ToString());
+        player.SetVoteTo(to);
     }
 }
