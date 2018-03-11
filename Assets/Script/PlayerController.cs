@@ -13,7 +13,7 @@ public class PlayerController : MonoBehaviour
 	public void Set(PlayerModel playerModel)
 	{
 		IdText.text = "Player" + playerModel.playerId;
-		RoleText.text = playerModel.role;
+		RoleText.text = playerModel.role.ToString();
 		VoterList.text = "";
 	}
 

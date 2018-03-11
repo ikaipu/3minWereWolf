@@ -4,6 +4,7 @@ using UnityEngine.TestTools;
 using NUnit.Framework;
 using System.Collections;
 using System.Linq;
+using Script;
 using UnityEditor.VersionControl;
 using UnityEngine.Assertions.Must;
 
@@ -57,7 +58,7 @@ public class TestGameManager {
 		Assert.IsTrue(expected.SequenceEqual(gameManager.GetDeadList()));
 
 		gameManager.Kill(0);
-		Assert.AreEqual("Citizen", gameManager.GetWinner());
+		Assert.AreEqual(gameManager.GetWinner(), "Citizen");
 		LogicHolder.isMock = false;
 	}
 	
@@ -83,7 +84,7 @@ public class TestGameManager {
 		Assert.AreEqual("", gameManager.GetWinner());
 		gameManager.Kill(5);
 		
-		Assert.AreEqual("Werewolf", gameManager.GetWinner());
+		Assert.AreEqual(gameManager.GetWinner(), "Werewolf");
 		LogicHolder.isMock = false;
 	}
 }
