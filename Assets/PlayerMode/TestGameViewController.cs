@@ -29,6 +29,12 @@ public class TestGameViewController {
 		
 		Assert.AreEqual(gameViewController.playerArray[0].VoteTo.text, EnumPlayer.Player2.ToString());
 		Assert.AreEqual(gameViewController.playerArray[1].VoteTo.text, EnumPlayer.Player1.ToString());
+
+		gameViewController.SetVotedNum(EnumPlayer.Player1, 2);
+		gameViewController.SetVotedNum(EnumPlayer.Player2, 1);
+		
+		Assert.AreEqual(gameViewController.playerArray[0].VotedNum.text, "2");
+		Assert.AreEqual(gameViewController.playerArray[1].VotedNum.text, "1");
 	}
 
 //	// A UnityTest behaves like a coroutine in PlayMode

@@ -17,5 +17,7 @@ public class StubGameViewController : MonoBehaviour
 		gameViewController.SetPlayer(PlayerModelArray);
 		gameViewController.SetVote(EnumPlayer.Player1, EnumPlayer.Player2);
 		gameViewController.SetVote(EnumPlayer.Player2, EnumPlayer.Player1);
+		gameViewController.SetVotedNum(EnumPlayer.Player1, 3);
+		gameViewController.SetVotedNum(EnumPlayer.Player2, 1);
 	}
 }

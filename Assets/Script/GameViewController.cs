@@ -21,6 +21,7 @@ public class GameViewController : MonoBehaviour
             playerInst.transform.localPosition = new Vector3(i * 108 - 108, 123, 3);
             playerArray[i] = playerInst.GetComponent<PlayerController>();
             playerArray[i].IdText.text = "Player" + (i + 1);
+            playerArray[i].VotedNum.text = "0";
         }
     }
 
@@ -42,5 +43,11 @@ public class GameViewController : MonoBehaviour
     {
         var player = playerArray.First(p => p.IdText.text == from.ToString());
         player.SetVoteTo(to);
+    }
+
+    public void SetVotedNum(EnumPlayer enumPlayer, int votedNum)
+    {
+        var player = playerArray.First(p => p.IdText.text == enumPlayer.ToString());
+        player.SetVotedNum(votedNum);
     }
 }

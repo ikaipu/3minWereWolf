@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
 	public Text IdText;
 	public Text RoleText;
 	public Text VoteTo;
+	public Text VotedNum;
 
 	public void Set(PlayerModel playerModel)
 	{
@@ -24,5 +25,10 @@ public class PlayerController : MonoBehaviour
 	public void SetVoteTo(EnumPlayer player)
 	{
 		VoteTo.text = player.ToString();
+	}
+
+	public void SetVotedNum(int votedNum)
+	{
+		VotedNum.text = votedNum.ToString();
 	}
 }
