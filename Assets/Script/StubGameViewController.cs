@@ -14,5 +14,10 @@ public class StubGameViewController : MonoBehaviour
 		PlayerModelArray[1] = new PlayerModel(2, "Werewolf");
 		gameViewController.SetTimer(3);
 		gameViewController.SetPlayer(PlayerModelArray);
+		gameViewController.playerArray[0].AddVoter("Player2");
+		gameViewController.playerArray[1].AddVoter("Player3");
+		gameViewController.playerArray[0].AddVoter("Player4");
+		gameViewController.playerArray[0].AddVoter("Player5");
+		gameViewController.playerArray[0].RemoveVoter("Player2");
 	}
 }
