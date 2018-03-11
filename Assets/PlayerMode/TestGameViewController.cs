@@ -17,9 +17,9 @@ public class TestGameViewController {
 		gameViewController.SetPlayer(PlayerModelArray);
 		
 		Assert.AreEqual(gameViewController.playerArray[0].IdText.text, EnumPlayer.Player1.ToString());
-		Assert.AreEqual(gameViewController.playerArray[0].RoleText.text,EnumRole.Citizen);
+		Assert.AreEqual(gameViewController.playerArray[0].RoleText.text,EnumRole.Citizen.ToString());
 		Assert.AreEqual(gameViewController.playerArray[1].IdText.text,EnumPlayer.Player2.ToString());
-		Assert.AreEqual(gameViewController.playerArray[1].RoleText.text,EnumRole.Werewolf);
+		Assert.AreEqual(gameViewController.playerArray[1].RoleText.text,EnumRole.Werewolf.ToString());
 
 		gameViewController.SetTimer(35);
 		Assert.AreEqual(gameViewController.timer.text, "35");
@@ -27,8 +27,8 @@ public class TestGameViewController {
 		gameViewController.SetVote(EnumPlayer.Player1, EnumPlayer.Player2);
 		gameViewController.SetVote(EnumPlayer.Player2, EnumPlayer.Player1);
 		
-		Assert.AreEqual(gameViewController.playerArray[0].IdText.text, EnumPlayer.Player2.ToString());
-		Assert.AreEqual(gameViewController.playerArray[1].IdText.text, EnumPlayer.Player1.ToString());
+		Assert.AreEqual(gameViewController.playerArray[0].VoteTo.text, EnumPlayer.Player2.ToString());
+		Assert.AreEqual(gameViewController.playerArray[1].VoteTo.text, EnumPlayer.Player1.ToString());
 	}
 
 //	// A UnityTest behaves like a coroutine in PlayMode

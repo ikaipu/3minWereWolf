@@ -157,7 +157,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '?'
+  m_Text: ???
 --- !u!114 &114750439101780590
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -190,7 +190,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Role
+  m_Text: 'Role
+
+'
 --- !u!222 &222200045568522124
 CanvasRenderer:
   m_ObjectHideFlags: 1

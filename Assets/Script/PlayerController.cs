@@ -13,6 +13,9 @@ public class PlayerController : MonoBehaviour
 
 	public void Set(PlayerModel playerModel)
 	{
+		Debug.Log("test" + gameObject.name);
+
+		Debug.Log("test" + playerModel.role.ToString());
 		IdText.text = playerModel.player.ToString();
 		RoleText.text = playerModel.role.ToString();
 		VoteTo.text = "";
