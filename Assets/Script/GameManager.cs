@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using JetBrains.Annotations;
-using UnityEngine;
 
 public class GameManager
 {
@@ -21,7 +18,6 @@ public class GameManager
         {
             voteDic.Add(i, -1);
         }
-
         DeadList = new List<int>();
         killTarget = -1;
     }

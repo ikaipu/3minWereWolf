@@ -5,12 +5,12 @@ using UnityEngine;
 
 public class PlayerModel
 {
-    public EnumPlayer player;
+    public PlayerId PlayerId;
     public EnumRole role;
 
-    public PlayerModel(EnumPlayer player, EnumRole role)
+    public PlayerModel(PlayerId playerId, EnumRole role)
     {
-        this.player = player;
+        this.PlayerId = playerId;
         this.role = role;
     }
 }

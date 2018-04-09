@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Script;
@@ -14,22 +15,30 @@ public class GameViewController : MonoBehaviour
 
     private void Awake()
     {
-        for (int i = 0; i < 2; i++)
+        for (int i = 0; i < 6; i++)
         {
             GameObject playerInst = GameObject.Instantiate(playerPrefab);
             playerInst.transform.SetParent(playerPrefabParent.transform);
-            playerInst.transform.localPosition = new Vector3(i * 108 - 108, 123, 3);
+            var enmPlayerId = (PlayerId)Enum.ToObject(typeof(PlayerId), i + 1);
+            if (i < 3)
+            {
+                playerInst.transform.localPosition = new Vector3(i * 108 - 108, 123, 3);
+            }
+            else
+            {
+                playerInst.transform.localPosition = new Vector3((i - 3) * 108 - 108, -53, 3);
+            }
             playerArray[i] = playerInst.GetComponent<PlayerController>();
-            playerArray[i].IdText.text = "Player" + (i + 1);
+            playerArray[i].IdText.text = PlayerIdExtensions.ToName(enmPlayerId);
             playerArray[i].VotedNum.text = "0";
         }
     }
 
-    public void SetPlayer(PlayerModel[] playerModelArray)
+    public void SetPlayers(PlayerModel[] playerModelArray)
     {
-        for (int i = 0; i < 2; i++)
+        for (int i = 0; i < 6; i++)
         {
-//            PlayerController playerController = GetComponent<PlayerController>();
+//          PlayerController playerController = GetComponent<PlayerController>();
             playerArray[i].Set(playerModelArray[i]);
         }
     }
@@ -39,15 +48,15 @@ public class GameViewController : MonoBehaviour
         timer.text = time.ToString();
     }
 
-    public void SetVote(EnumPlayer from, EnumPlayer to)
+    public void SetVote(PlayerId from, PlayerId to)
     {
         var player = playerArray.First(p => p.IdText.text == from.ToString());
         player.SetVoteTo(to);
     }
 
-    public void SetVotedNum(EnumPlayer enumPlayer, int votedNum)
+    public void SetVotedNum(PlayerId playerId, int votedNum)
     {
-        var player = playerArray.First(p => p.IdText.text == enumPlayer.ToString());
+        var player = playerArray.First(p => p.IdText.text == playerId.ToString());
         player.SetVotedNum(votedNum);
     }
 }

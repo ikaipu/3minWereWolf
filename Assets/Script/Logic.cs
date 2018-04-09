@@ -5,6 +5,10 @@ using UnityEngine;
 
 public class Logic : ILogic {
 	
+	private int time;
+	private int passTime;
+	private Action onTime;
+	
 	public int GetRandamInt(int start,int end)
 	{
 		return UnityEngine.Random.RandomRange(start,end);
@@ -12,6 +16,21 @@ public class Logic : ILogic {
 
 	public void StartTime(int time, Action onTime)
 	{
-		throw new NotImplementedException();
+		this.time = time;
+		passTime = 0;
+		this.onTime = onTime;
+	}
+
+	public void PassTime(int passedTime)
+	{
+		this.passTime += passedTime;
+		if (this.passTime >= time)
+		{
+			if (onTime != null)
+			{
+				onTime();
+				onTime = null;
+			}	
+		}
 	}
 }
