@@ -14,7 +14,7 @@ public class GameManager
     {
         this.logic = logic;
         voteDic = new Dictionary<int, int>();
-        for (int i = 0; i < 6; i++)
+        for (int i = 0; i < 3; i++)
         {
             voteDic.Add(i, -1);
         }
@@ -24,7 +24,7 @@ public class GameManager
 
     public void SetWerewolfIndex()
     {
-        wereWolfIndex = logic.GetRandamInt(0, 6);
+        wereWolfIndex = logic.GetRandamInt(0, 3);
     }
     
     public int GetWerewolfIndex()
@@ -61,7 +61,7 @@ public class GameManager
     public double GetMostVotedIndex()
     {
         Dictionary<int, int> votedDic = new Dictionary<int, int>();
-        for (int i = 0; i < 6; i++)
+        for (int i = 0; i < 3; i++)
         {
             votedDic.Add(i, 0);
         }
@@ -100,7 +100,7 @@ public class GameManager
             return "Citizen";
         }
 
-        if (DeadList.Count() >= 5)
+        if (DeadList.Count() >= 2)
         {
             return "Werewolf";
         }

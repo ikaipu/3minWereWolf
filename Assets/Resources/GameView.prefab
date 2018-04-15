@@ -78,6 +78,7 @@ MonoBehaviour:
   playerArray:
   - {fileID: 0}
   - {fileID: 0}
+  - {fileID: 0}
   playerPrefab: {fileID: 1266554715316336, guid: 150c4e7f9509a4528a1cb9ade5a17e68,
     type: 2}
   playerPrefabParent: {fileID: 1509452626347354}

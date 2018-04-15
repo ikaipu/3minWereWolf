@@ -15,7 +15,7 @@ public class GameViewController : MonoBehaviour
 
     private void Awake()
     {
-        for (int i = 0; i < 6; i++)
+        for (int i = 0; i < 3; i++)
         {
             GameObject playerInst = GameObject.Instantiate(playerPrefab);
             playerInst.transform.SetParent(playerPrefabParent.transform);
@@ -36,10 +36,13 @@ public class GameViewController : MonoBehaviour
 
     public void SetPlayers(PlayerModel[] playerModelArray)
     {
-        for (int i = 0; i < 6; i++)
+        for (int i = 0; i < 3; i++)
         {
 //          PlayerController playerController = GetComponent<PlayerController>();
-            playerArray[i].Set(playerModelArray[i]);
+            playerArray[i].Set(playerModelArray[i], playerId =>
+            {
+                Debug.Log("onPress " + playerId);
+            });
         }
     }
 
@@ -51,7 +54,7 @@ public class GameViewController : MonoBehaviour
     public void SetVote(PlayerId from, PlayerId to)
     {
         var player = playerArray.First(p => p.IdText.text == from.ToString());
-        player.SetVoteTo(to);
+        player.SetVoteTo();
     }
 
     public void SetVotedNum(PlayerId playerId, int votedNum)

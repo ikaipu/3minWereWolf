@@ -13,10 +13,9 @@ public class TestGameViewController {
 		PlayerModelArray[0] = new PlayerModel(PlayerId.Player1, EnumRole.Citizen);
 		PlayerModelArray[1] = new PlayerModel(PlayerId.Player2, EnumRole.Citizen);
 		PlayerModelArray[2] = new PlayerModel(PlayerId.Player3, EnumRole.Citizen);
-		PlayerModelArray[3] = new PlayerModel(PlayerId.Player4, EnumRole.Werewolf);
-		PlayerModelArray[4] = new PlayerModel(PlayerId.Player5, EnumRole.Citizen);
-		PlayerModelArray[5] = new PlayerModel(PlayerId.Player6, EnumRole.Citizen);
-		Debug.Log(PlayerModelArray);
+//		PlayerModelArray[3] = new PlayerModel(PlayerId.Player4, EnumRole.Werewolf);
+//		PlayerModelArray[4] = new PlayerModel(PlayerId.Player5, EnumRole.Citizen);
+//		PlayerModelArray[5] = new PlayerModel(PlayerId.Player6, EnumRole.Citizen);
 		gameViewController.SetPlayers(PlayerModelArray);
 		
 		Assert.AreEqual(gameViewController.playerArray[0].IdText.text, PlayerId.Player1.ToString());

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Script;
 using UnityEngine;
 using UnityEngine.UI;
+using System;
 
 public class PlayerController : MonoBehaviour
 {
@@ -11,17 +12,21 @@ public class PlayerController : MonoBehaviour
 	public Text RoleText;
 	public Text VoteTo;
 	public Text VotedNum;
+	private PlayerModel playerModel;
+	private Action<PlayerId> onVote;
 
-	public void Set(PlayerModel playerModel)
+	public void Set(PlayerModel playerModel,Action<PlayerId> onVote)
 	{
+		this.playerModel = playerModel;
 		IdText.text = PlayerIdExtensions.ToName(playerModel.PlayerId);
 		RoleText.text = playerModel.role.ToString();
 		VoteTo.text = "";
+		this.onVote = onVote;
 	}
 
-	public void SetVoteTo(PlayerId playerId)
+	public void SetVoteTo()
 	{
-		VoteTo.text = playerId.ToString();
+		onVote(playerModel.PlayerId);
 	}
 
 	public void SetVotedNum(int votedNum)
