@@ -728,30 +728,9 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 114121288305527346, guid: 150c4e7f9509a4528a1cb9ade5a17e68,
-        type: 2}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 992163954}
-    - target: {fileID: 114121288305527346, guid: 150c4e7f9509a4528a1cb9ade5a17e68,
-        type: 2}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SetVoteTo
-      objectReference: {fileID: 0}
-    - target: {fileID: 114121288305527346, guid: 150c4e7f9509a4528a1cb9ade5a17e68,
-        type: 2}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 150c4e7f9509a4528a1cb9ade5a17e68, type: 2}
   m_IsPrefabParent: 0
---- !u!114 &992163954 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114268682401491410, guid: 150c4e7f9509a4528a1cb9ade5a17e68,
-    type: 2}
-  m_PrefabInternal: {fileID: 992163952}
-  m_Script: {fileID: 11500000, guid: 86ebb0af4a2b54933aa10be1f15e5866, type: 3}
 --- !u!1 &1027010102
 GameObject:
   m_ObjectHideFlags: 0
