@@ -7,6 +7,8 @@ public class TestGameViewController {
 	[Test]
 	public void TestGameViewControllerSimplePasses()
 	{
+		ILogic logic = new Logic();
+		GameManager gameManager = new GameManager(logic);
 		GameObject gameViewPrefab = Resources.Load<GameObject>("GameView");
 		GameViewController gameViewController = GameObject.Instantiate(gameViewPrefab).GetComponent<GameViewController>();
 		PlayerModel[] PlayerModelArray = new PlayerModel[2];
@@ -16,7 +18,7 @@ public class TestGameViewController {
 //		PlayerModelArray[3] = new PlayerModel(PlayerId.Player4, EnumRole.Werewolf);
 //		PlayerModelArray[4] = new PlayerModel(PlayerId.Player5, EnumRole.Citizen);
 //		PlayerModelArray[5] = new PlayerModel(PlayerId.Player6, EnumRole.Citizen);
-		gameViewController.SetPlayers(PlayerModelArray);
+		gameViewController.SetPlayers(PlayerModelArray, gameManager);
 		
 		Assert.AreEqual(gameViewController.playerArray[0].IdText.text, PlayerId.Player1.ToString());
 		Assert.AreEqual(gameViewController.playerArray[0].RoleText.text, EnumRole.Citizen.ToString());

@@ -22,11 +22,10 @@ namespace Assets.Script
 			int wereWolfIndex = gameManager.GetWerewolfIndex();
 			for (int i = 0; i < 3; i++)
 			{
-				var enmPlayerId = (PlayerId)Enum.ToObject(typeof(PlayerId), i + 1);
+				var enmPlayerId = PlayerIdExtensions.FromInt(i + 1);
 				playerModelArray[i] = new PlayerModel(enmPlayerId, i == wereWolfIndex ? EnumRole.Werewolf : EnumRole.Citizen);
 			}
-			GameViewController.SetPlayers(playerModelArray);
-			bool isCalled = false;
+			GameViewController.SetPlayers(playerModelArray, gameManager);
 			gameManager.StartGame(() => timer = 0);
 			StartCoroutine(CountUpCoroutine());
 //			GameViewController.SetVote(PlayerId.Player1, PlayerId.Player2);
@@ -39,7 +38,6 @@ namespace Assets.Script
 		{
 			while(true){
 				GameViewController.SetTimer(timer++);
-				Debug.Log(timer);
 				logic.PassTime(timer);
 				yield return new WaitForSeconds(1);
 			};

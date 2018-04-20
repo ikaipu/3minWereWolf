@@ -19,7 +19,7 @@ public class GameViewController : MonoBehaviour
         {
             GameObject playerInst = GameObject.Instantiate(playerPrefab);
             playerInst.transform.SetParent(playerPrefabParent.transform);
-            var enmPlayerId = (PlayerId)Enum.ToObject(typeof(PlayerId), i + 1);
+            var enmPlayerId = PlayerIdExtensions.FromInt(i + 1);
             if (i < 3)
             {
                 playerInst.transform.localPosition = new Vector3(i * 108 - 108, 123, 3);
@@ -34,14 +34,17 @@ public class GameViewController : MonoBehaviour
         }
     }
 
-    public void SetPlayers(PlayerModel[] playerModelArray)
+    public void SetPlayers(PlayerModel[] playerModelArray, GameManager gameManager)
     {
         for (int i = 0; i < 3; i++)
         {
-//          PlayerController playerController = GetComponent<PlayerController>();
             playerArray[i].Set(playerModelArray[i], playerId =>
             {
-                Debug.Log("onPress " + playerId);
+                gameManager.SetVoteTarget(0, PlayerIdExtensions.ToInt(playerId) - 1);
+                for (int j = 0; j < 3; j++)
+                {
+                    playerArray[j].SetVotedNum(gameManager.GetVotedNum(j));
+                }
             });
         }
     }

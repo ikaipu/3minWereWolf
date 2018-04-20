@@ -1,4 +1,6 @@
-﻿namespace Script
+﻿using System;
+
+namespace Script
 {
     public enum PlayerId
     {
@@ -9,8 +11,7 @@
         Player5 = 5,
         Player6 = 6,
     }
-
-
+    
     static class PlayerIdExtensions
     {
         public static string ToName(this PlayerId id)
@@ -32,6 +33,16 @@
                 default:
                     return "???";
             }
+        }
+
+        public static PlayerId FromInt(int i)
+        {
+            return (PlayerId)Enum.ToObject(typeof(PlayerId), i);
+        }
+
+        public static int ToInt(PlayerId playerId)
+        {
+            return (int) playerId;
         }
     }
 }

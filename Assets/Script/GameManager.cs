@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using UnityEngine;
 
 public class GameManager
 {
     private ILogic logic;
     private Dictionary<int, int> voteDic;
+    private Dictionary<int, int> votedDic;
     private int killTarget;
     private int wereWolfIndex;
     private List<int> DeadList;
@@ -14,9 +16,11 @@ public class GameManager
     {
         this.logic = logic;
         voteDic = new Dictionary<int, int>();
+        votedDic = new Dictionary<int, int>();
         for (int i = 0; i < 3; i++)
         {
             voteDic.Add(i, -1);
+            votedDic.Add(i, 0);
         }
         DeadList = new List<int>();
         killTarget = -1;
@@ -37,10 +41,19 @@ public class GameManager
         logic.StartTime(60, action);
     }
 
-
     public void SetVoteTarget(int from, int to)
     {
+        if (voteDic[from] > -1)
+        {
+            votedDic[voteDic[from]]--;
+        }
         voteDic[from] = to;
+        votedDic[to]++;
+    }
+
+    public int GetVotedNum(int index)
+    {
+        return votedDic[index];
     }
 
     public Dictionary<int, int> GetTargetDictionary()
@@ -60,12 +73,6 @@ public class GameManager
 
     public double GetMostVotedIndex()
     {
-        Dictionary<int, int> votedDic = new Dictionary<int, int>();
-        for (int i = 0; i < 3; i++)
-        {
-            votedDic.Add(i, 0);
-        }
-
         foreach (int fromIndex in voteDic.Keys)
         {
             votedDic[voteDic[fromIndex]]++;

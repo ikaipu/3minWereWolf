@@ -6,6 +6,7 @@ using UnityEngine;
 public class StubGameViewController : MonoBehaviour
 {
 	public GameViewController gameViewController;
+	public GameManager gameManager;
 
 
 	public void ButtonSetPlayer()
@@ -18,7 +19,7 @@ public class StubGameViewController : MonoBehaviour
 //		PlayerModelArray[4] = new PlayerModel(PlayerId.Player5, EnumRole.Citizen);
 //		PlayerModelArray[5] = new PlayerModel(PlayerId.Player6, EnumRole.Citizen);
 		gameViewController.SetTimer(3);
-		gameViewController.SetPlayers(PlayerModelArray);
+		gameViewController.SetPlayers(PlayerModelArray, gameManager);
 		gameViewController.SetVote(PlayerId.Player1, PlayerId.Player2);
 		gameViewController.SetVote(PlayerId.Player2, PlayerId.Player1);
 		gameViewController.SetVotedNum(PlayerId.Player1, 3);
