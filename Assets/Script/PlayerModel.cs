@@ -1,16 +1,15 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System;
 using Script;
-using UnityEngine;
 
+[Serializable]
 public class PlayerModel
 {
-    public PlayerId PlayerId;
+    public string id;
     public EnumRole role;
 
-    public PlayerModel(PlayerId playerId, EnumRole role)
+    public PlayerModel(PlayerId id, EnumRole role)
     {
-        this.PlayerId = playerId;
+        this.id = PlayerIdExtensions.ToString(id);
         this.role = role;
     }
 }

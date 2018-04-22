@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AD_UNIT_ID_FOR_BANNER_TEST</key>
+	<string>ca-app-pub-3940256099942544/2934735716</string>
+	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
+	<string>ca-app-pub-3940256099942544/4411468910</string>
+	<key>CLIENT_ID</key>
+	<string>441205413503-39hev1eqiv74ltc6fmthnc908qfme094.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.441205413503-39hev1eqiv74ltc6fmthnc908qfme094</string>
+	<key>API_KEY</key>
+	<string>AIzaSyB7v3N838uma-kzILhY_nqgHeaytr7tUCg</string>
+	<key>GCM_SENDER_ID</key>
+	<string>441205413503</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.nakaz.werewolf</string>
+	<key>PROJECT_ID</key>
+	<string>werewolf-7fae8</string>
+	<key>STORAGE_BUCKET</key>
+	<string>werewolf-7fae8.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<true></true>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<false></false>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:441205413503:ios:1ffa3a81467c69bb</string>
+	<key>DATABASE_URL</key>
+	<string>https://werewolf-7fae8.firebaseio.com</string>
+</dict>
+</plist>

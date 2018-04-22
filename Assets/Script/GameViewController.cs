@@ -29,7 +29,7 @@ public class GameViewController : MonoBehaviour
                 playerInst.transform.localPosition = new Vector3((i - 3) * 108 - 108, -53, 3);
             }
             playerArray[i] = playerInst.GetComponent<PlayerController>();
-            playerArray[i].IdText.text = PlayerIdExtensions.ToName(enmPlayerId);
+            playerArray[i].IdText.text = enmPlayerId.ToName();
             playerArray[i].VotedNum.text = "0";
         }
     }
@@ -40,7 +40,7 @@ public class GameViewController : MonoBehaviour
         {
             playerArray[i].Set(playerModelArray[i], playerId =>
             {
-                gameManager.SetVoteTarget(0, PlayerIdExtensions.ToInt(playerId) - 1);
+                gameManager.SetVoteTarget(0, int.Parse(playerId) - 1);
                 for (int j = 0; j < 3; j++)
                 {
                     playerArray[j].SetVotedNum(gameManager.GetVotedNum(j));

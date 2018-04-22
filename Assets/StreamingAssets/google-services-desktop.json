@@ -1,0 +1,37 @@
+{
+  "client": [
+    {
+      "services": {
+        "appinvite_service": {
+          "status": 0
+        }, 
+        "analytics_service": {
+          "status": 0
+        }
+      }, 
+      "oauth_client": [
+        {
+          "client_id": "441205413503-39hev1eqiv74ltc6fmthnc908qfme094.apps.googleusercontent.com"
+        }
+      ], 
+      "api_key": [
+        {
+          "current_key": "AIzaSyB7v3N838uma-kzILhY_nqgHeaytr7tUCg"
+        }
+      ], 
+      "client_info": {
+        "mobilesdk_app_id": "1:441205413503:ios:1ffa3a81467c69bb", 
+        "android_client_info": {
+          "package_name": "com.nakaz.werewolf"
+        }
+      }
+    }
+  ], 
+  "configuration_version": "1", 
+  "project_info": {
+    "storage_bucket": "werewolf-7fae8.appspot.com", 
+    "project_id": "werewolf-7fae8", 
+    "firebase_url": "https://werewolf-7fae8.firebaseio.com", 
+    "project_number": "441205413503"
+  }
+}

@@ -44,5 +44,10 @@ namespace Script
         {
             return (int) playerId;
         }
+        
+        public static string ToString(PlayerId playerId)
+        {
+            return Enum.GetName(typeof(PlayerId), playerId);
+        }
     }
 }

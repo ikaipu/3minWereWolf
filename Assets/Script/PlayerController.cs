@@ -13,12 +13,12 @@ public class PlayerController : MonoBehaviour
 	public Text VoteTo;
 	public Text VotedNum;
 	private PlayerModel playerModel;
-	private Action<PlayerId> onVote;
+	private Action<string> onVote;
 
-	public void Set(PlayerModel playerModel,Action<PlayerId> onVote)
+	public void Set(PlayerModel playerModel,Action<string> onVote)
 	{
 		this.playerModel = playerModel;
-		IdText.text = PlayerIdExtensions.ToName(playerModel.PlayerId);
+		IdText.text = playerModel.id;
 		RoleText.text = playerModel.role.ToString();
 		VoteTo.text = "";
 		this.onVote = onVote;
@@ -26,7 +26,7 @@ public class PlayerController : MonoBehaviour
 
 	public void SetVoteTo()
 	{
-		onVote(playerModel.PlayerId);
+		onVote(playerModel.id);
 	}
 
 	public void SetVotedNum(int votedNum)
